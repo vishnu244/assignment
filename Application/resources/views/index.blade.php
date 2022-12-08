@@ -1,23 +1,25 @@
-<form action = "/index" method = "POST" >
-    <input type = "hidden" name ="Id" value = "<?php echo $id; ?>" >
-        <div >
-            <select name="Selectoption"id="select">    
-                <option value="email">Name</option>
-                <option value="name"> Department</option>
-                <option value="phone_number">Salary</option>
-            </select> 
+<a href= "/update"> <button>Update</button> </a> <br> 
 
-            <button type ="submit" name="SORT" class="btn" >SORT</button>
-            
-        </div>
-        
-        <div >
-            <input type="text" name="search" placeholder="Enter Name,EmpId,Dept or city">
-            <button type ="submit" >Search</button>            
-        </div>
-        <div >
-            
-            <button type ="submit" >Display</button>            
-        </div>
-           
-</form>
+<a href= "{{url('/display_customers')}}"> <button type ="submit" >Display</button>   </a> <br>
+<a href= "{{url('/update_customer_ID/{id}')}}"> <button type ="submit" >Edit</button>    </a> <br>
+
+
+
+<table border="1"> 
+    <tr>
+        <td> Name </td>
+        <td> Email </td>
+        <td> MobileNumber </td>
+        <td> DateOfBirth </td>
+    </tr>
+
+    @foreach($details as $detail)
+    <tr>
+        <td> {{$detail ['Name']}} </td>
+        <td> {{$detail ['Email']}} </td>
+        <td> {{$detail ['MobileNumber']}} </td>
+        <td> {{$detail ['DateOfBirth']}} </td>
+
+    </tr>
+    @endforeach
+</table>

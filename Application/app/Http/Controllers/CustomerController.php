@@ -40,8 +40,17 @@ class CustomerController extends Controller
     {
         $customer = customer::all();
         return response()->json(['success' => $customer]);
+        return view ('index',['details'=>$customer]);
+
 
     }
+
+    // public function displaydetails()
+    // {
+    //     $data = customer::all();
+    //     return view ('index',['details'=>$data]);
+    //     // return view('index');
+    // }
 
 
     public function update_customer_ID(Request $request, $id)
@@ -113,4 +122,7 @@ class CustomerController extends Controller
            return response()->json(['message'=>'No customer data Found to Display'],401);
         }
     }
+
+
+    
 }
