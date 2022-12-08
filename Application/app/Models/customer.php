@@ -16,6 +16,5 @@ class customer extends Model
         'email',
         'phoneNumber',
         'date_of_birrth',
-        'points'
     ]);
 }

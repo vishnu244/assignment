@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email') -> unique();
             $table->string('phoneNumber',10) -> unique();
             $table->string('date_of_birrth');
-            $table->double('points')->default(1000);
+            $table->double('points')->default(1000)->nullable();
             $table->timestamps();
         });
     }
